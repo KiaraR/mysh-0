@@ -18,7 +18,7 @@ int main()
 
     mysh_parse_command(buf, &argc, &argv);
 
-    if (strcmp(argv[0], "") == 0) {
+    if (strcmp(buf, "") == 0) {
       goto release_and_continue;
     } else if (strcmp(argv[0], "cd") == 0) {
       if (do_cd(argc, argv)) {
