@@ -17,6 +17,13 @@ void mysh_parse_command(const char* command,
   char* p;//=(char*)malloc(sizeof(char)*strlen(str));
   p = strtok(str, "' ',\t,\n");
 
+  //empty command
+  if(p==NULL){
+    (*argc)=1;
+    strcpy((*argv)[0],"");
+    return;
+  }
+
   while(p!=NULL) {
 //    (*argv)[i++] = p;
       strcpy((*argv)[i],p);
